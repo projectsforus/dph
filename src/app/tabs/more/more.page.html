@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{'TABS.MORE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list >
+    <ion-item [routerLink]="['/tabs/more/settings/']" >
+      {{'MORE.SETTINGS' | translate}}
+    </ion-item>
+    <ion-item [routerLink]="['/tabs/more/help/']">
+      {{'MORE.HELP' | translate}}
+    </ion-item>
+  </ion-list>
+</ion-content>

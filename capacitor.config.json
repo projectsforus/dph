@@ -1,0 +1,7 @@
+{
+  "appId": "com.dphelper",
+  "appName": "DPHelper",
+  "bundledWebRuntime": false,
+  "webDir": "www",
+  "linuxAndroidStudioPath": "/home/hossam/android-studio/bin/studio.sh"
+}

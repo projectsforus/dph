@@ -1,0 +1,137 @@
+{
+    "OK": "موافق",
+    "CANCEL": "إلغاء",
+    "ERROR": "خطأ",
+    "TABS":{
+        "HOME":"غذائي",
+        "PROFILE":"حسابي",
+        "MY_MEDICATION": "الأدوية",
+        "CONTACT_DR": "راسل الطبيب",
+        "MY_PATIENTS": "المرضى",
+        "CONTACT_PATIENT": "راسل المريض",
+        "DR_LIST": "قائمة الأطباء",
+        "MORE": "المزيد"
+    },
+    "LOGIN":{
+        "LOGIN": "تسجيل دخول مريض",
+        "LOGIN_DR": "تسجيل دخول طبيب",
+        "LOGIN_OTIONS":"تسجيل الدخول",
+        "PATIENT_OR_DR": "هل أنت مريض ام طبيب؟",
+        "FILE_NO": "رقم الملف أو البريدالإلكتروني",
+        "EMAIL": "البريد الإلكتروني",
+        "PASSWORD": "كلمة السر",
+        "SHOW_PASSWORD": "أظهر كلمة السر",
+        "FORGOT_PASSWORD": "نسيت كلمة السر؟",
+        "GO_SIGNUP": "تسجيل حساب جديد؟",
+        "GO_DR_LOGIN": "سجل الدخول كطبيب..",
+        "GO_LOGIN": "سجل الدخول كمريض..",
+        "SUCCESS": "لقد قمت بتسجيل الدخول بنجاح",
+        "SUCCESS_LOGOUT": "لقد قمت بتسجيل الخروج بنجاح"
+    },
+    "SIGNUP":{
+        "SIGNUP": "تسجيل",
+        "EMAIL": "البريد الإلكتروني",
+        "FILE_NO": "رقم الملف",
+        "PASSWORD": "كلمة السر",
+        "SHOW_PASSWORD": "أظهر كلمة السر",
+        "NAME": "الأسم بالكامل",
+        "USERNAME": "إسم المستخدم",
+        "FIRST_NAME": "الأسم الأول",
+        "LAST_NAME": "الأسم الأخير",
+        "ADDRESS": "العنوان",
+        "SUCCESS": "لقد قمت بتسجيل حساب جديد بنجاح",
+        "GO_LOGIN": "لديك حساب بالفعل..تسجيل الدخول؟"
+    },
+    "PROFILE":{
+        "EMAIL": "البريد الإلكتروني",
+        "FILE_NO": "رقم الملف",
+        "PASSWORD": "كلمة السر",
+        "NAME": "الأسم بالكامل",
+        "ADDRESS": "العنوان",
+        "LOCATION": "الموقع على الخريطة",
+        "LOGOUT": "تسجيل الخروج",
+        "DR_NAME": "إسم الطبيب",
+        "SECURITY": "الحماية والأمان",
+        "PRESONAL_INFO": "البيانات الشخصية"
+    },
+    "DIET":{
+        "MY_FOOD": "غذائي",
+        "NUTRITION": "العناصر",
+        "TOTAL": "المجموع",
+        "ADDED_AT": "Added at",
+        "DAY_VIEW_FOOD": "العرض اليومي للغذاء",
+        "DAY_VIEW_NUTRITIONS": "العرض اليومي للعناصر",
+        "NUTRITIONS": {
+            "IRON": "الحديد",
+            "PROTEIN": "البروتين",
+            "SODIUM": "الصوديوم",
+            "PHOSPHORUS": "الفوسفور",
+            "POTASSIUM": "البوتاسيوم"
+        }
+    },
+    "ADD_FOOD":{
+        "ADD_FOOD":"أضافة وجبة",
+        "SHOW_FOOD": "عناصر الوجبة",
+        "FOOD_ADDED": "تم أضافة وجبة جديدة لوجباتك اليوم"
+    },
+    "PATIENT_CHAT": {
+        "PATIENT_CHAT": "راسل المريض"
+    },
+    "ADD_MEDICATION":{
+        "ADD_MEDICATION":"أضافة أدوية",
+        "NAME": "اسم الدواء",
+        "QUANTITY": "الكمية",
+        "FROM_DATE": "من تاريخ",
+        "TO_DATE": "إلي تاريخ",
+        "Every": "كل )ساعات(",
+        "NOTES": "ملاحظات",
+        "ADD": "أضافة"
+    },
+    "ADD_DR": {
+        "ADD_DR": "أضافة طبيب"
+    },
+    "MY_PATIENTS": {
+        "PATIENT_INFO": "بيانات المريض"
+    },
+    "ADD_PATIENT":{
+        "ADD_PATIENT":"أضافة مريض",
+        "PATIENT_NO": "رقم الملف",
+        "NAME_DISPLAYED": "الإسم المعروض",
+        "ADD": "أضافة"
+    },
+    "HELP":{
+        "HELP":"المساعدة",
+        "ABOUT_US": "من نحن",
+        "DELETE_ACCOUNT": "حذف الحساب"
+    },
+    "SETTINGS":{
+        "SETTINGS":"الإعدادات",
+        "LANGUAGE":"اللغة",
+        "LOGOUT":"تسجيل الخروج"
+    },
+    "MORE":{
+        "SETTINGS": "الإعدادات",
+        "HELP": "المساعدة"
+    },
+    "VALIDATION":{
+        "BLANK":"لا يمكن أن يكون فارغ!",
+        "INVALID_EMAIL":"البريد الإلكتروني غير صحيح!",
+        "INVALID_PHONE":"رقم الهاتف غير صحيح!",
+        "PASSWORD_CONFIRMATION":"تأكيد كلمة المرور خاطئة!",
+        "PASSWORD_TOO_SHORT":"أقل من اللازم!",
+        "PASSWORD_TOO_LONG":"أكثر من اللازم!",
+        "INVALID_USER_Name": "إسم المستخدم غير صالح"
+    },
+    "ERRORS": {
+        "OFFLINE": "مشكلة في الأتصال!",
+        "REQUEST": "خطأ في تحميل البيانات, الرجاء المحاولة لاحقا",
+        "NO_RESAULTS": "عفواً لا يوجد نتائج بهذه الكلمات ",
+        "NO_CONNECTION": " تعذّر الإتصال بالإنترنت ",
+        "FIREBASE": {
+            "EMAIL_NOT_FOUND": "بريد إلكتروني غير صحيح",
+            "INVALID_PASSWORD": "كلمة السر خاطئة",
+            "EMAIL_EXISTS": "البريد الإلكتروني مسجل بالفعل",
+            "INVALID_EMAIL_OR_PASSWORD": "بيانات غير صحيحة"
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" *ngIf="showPatient()" >
+      <ion-icon name="pizza"></ion-icon>
+      <ion-label>{{'TABS.HOME' | translate }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="my-medication" *ngIf="showPatient()" >
+      <ion-icon name="medkit"></ion-icon>
+      <ion-label>{{'TABS.MY_MEDICATION' | translate }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="contact-dr"  *ngIf="showPatient()" >
+      <ion-icon name="mail"></ion-icon>
+      <ion-label>{{'TABS.CONTACT_DR' | translate }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="my-patients" *ngIf="showDr()" >
+      <ion-icon name="people"></ion-icon>
+      <ion-label>{{'TABS.MY_PATIENTS' | translate }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="contact-patient"  *ngIf="showDr()" >
+      <ion-icon name="mail"></ion-icon>
+      <ion-label>{{'TABS.CONTACT_PATIENT' | translate }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="doctors-list"  *ngIf="adminAccount" >
+      <ion-icon name="people"></ion-icon>
+      <ion-label>{{'TABS.DR_LIST' | translate }}</ion-label>
+    </ion-tab-button>
+  
+    <ion-tab-button tab="profile">
+      <ion-icon name="contact"></ion-icon>
+      <ion-label>{{'TABS.PROFILE' | translate }}</ion-label>
+    </ion-tab-button>
+  
+    <ion-tab-button tab="more">
+      <ion-icon name="more"></ion-icon>
+      <ion-label>{{'TABS.MORE' | translate }}</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

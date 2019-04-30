@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{'ADD_DR.ADD_DR' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="signupForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">{{'SIGNUP.FIRST_NAME' | translate }}</ion-label>
+        <ion-input formControlName="firstName"></ion-input>
+      </ion-item>
+      <app-control-error-message [control]="signupForm['controls']['firstName']"></app-control-error-message>
+
+      <ion-item>
+        <ion-label position="stacked">{{'SIGNUP.LAST_NAME' | translate }}</ion-label>
+        <ion-input formControlName="lastName"></ion-input>
+      </ion-item>
+      <app-control-error-message [control]="signupForm['controls']['lastName']"></app-control-error-message>
+
+      <ion-item>
+        <ion-label position="stacked">{{'SIGNUP.EMAIL' | translate }}</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </ion-item>
+      <app-control-error-message [control]="signupForm['controls']['email']"></app-control-error-message>
+
+      <ion-item>
+        <ion-label position="stacked">{{'SIGNUP.USERNAME' | translate }}</ion-label>
+        <ion-input formControlName="username"></ion-input>
+      </ion-item>
+      <app-control-error-message [control]="signupForm['controls']['username']"></app-control-error-message>
+
+      <ion-item>
+        <ion-label position="stacked">{{'SIGNUP.PASSWORD' | translate }}</ion-label>
+        <ion-input formControlName="password" [type]="showPassword ? 'text' :'password'"></ion-input>
+      </ion-item>
+      <app-control-error-message [control]="signupForm['controls']['password']"></app-control-error-message>
+    </ion-list>
+  </form>
+  <ion-item>
+    <ion-checkbox color="dark" [(ngModel)]="showPassword"></ion-checkbox>
+    <ion-label> {{ 'LOGIN.SHOW_PASSWORD' | translate }} </ion-label>
+  </ion-item>
+  <ion-button expand="block" type="submit" [disabled]="!signupForm.valid" (click)="addDr()">
+    {{'ADD_DR.ADD_DR' | translate }}</ion-button>
+</ion-content>

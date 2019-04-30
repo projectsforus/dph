@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{'ADD_FOOD.ADD_FOOD' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-searchbar color="medium" showCancelButton
+      animated spellcheck autocomplete autocorrect debounce="100"
+      placeholder="Search for a food" 
+      (ionChange)="search($event)" (ionClear)="clear()">
+    </ion-searchbar>
+    <ion-list>
+      <ion-spinner *ngIf="searching" ></ion-spinner>
+      <ion-item *ngFor="let food of foodList" (click)="showFood(food)" >
+      <ion-avatar slot="start">
+        <ion-img [src]="food?.photo.thumb"></ion-img>
+      </ion-avatar>
+        <ion-label position="stacked">
+          {{food?.food_name}}
+        </ion-label>
+        <ion-text color="medium" >
+            {{food?.serving_qty}} {{food?.serving_unit}}
+        </ion-text>
+        <ion-note slot="end" color="dark"> {{ food?.serving_weight_grams }} g</ion-note>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="!foodList">
+      <ion-text color="secondary">
+        You can search and add your food... 
+      </ion-text>
+      <ion-item class="empty">
+        <ion-img src="assets/imgs/search.png"></ion-img>
+      </ion-item>
+  </ion-list>
+    <ion-list *ngIf="foodList && !foodList.length">
+      <ion-text color="secondary">
+        We couldn't find that food, sorry! 
+      </ion-text>
+      <ion-item class="empty">
+        <ion-img src="assets/imgs/empty.png"></ion-img>
+      </ion-item>
+  </ion-list>
+</ion-content>

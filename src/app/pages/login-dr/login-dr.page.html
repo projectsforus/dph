@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{'LOGIN.LOGIN_DR' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-img src="assets/imgs/logo.png"></ion-img>
+  <form [formGroup]="loginForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">{{'LOGIN.EMAIL' | translate }}</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </ion-item>
+      <app-control-error-message [control]="loginForm['controls']['email']"></app-control-error-message>
+
+      <ion-item>
+        <ion-label position="stacked">{{'LOGIN.PASSWORD' | translate }}</ion-label>
+        <ion-input formControlName="password" [type]="showPassword ? 'text' :'password'"></ion-input>
+      </ion-item>
+      <app-control-error-message [control]="loginForm['controls']['password']"></app-control-error-message>
+    </ion-list>
+  </form>
+  <ion-item>
+    <ion-checkbox color="dark" [(ngModel)]="showPassword"></ion-checkbox>
+    <ion-label> {{ 'LOGIN.SHOW_PASSWORD' | translate }} </ion-label>
+  </ion-item>
+  <ion-button expand="block" type="submit" [disabled]="!loginForm.valid" (click)="login()">{{'LOGIN.LOGIN_DR'
+    | translate}}</ion-button>
+    <ion-button [routerLink]="['/signup']" fill="clear" color='medium'>
+      {{'LOGIN.FORGOT_PASSWORD' | translate }}
+    </ion-button>
+    <ion-button [routerLink]="['/login']" fill="clear" color='secondary'>
+      {{'LOGIN.GO_LOGIN' | translate }}
+    </ion-button>
+</ion-content>

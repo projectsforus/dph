@@ -1,0 +1,138 @@
+{
+    "OK": "Ok",
+    "CANCEL": "Cancel",
+    "ERROR": "Error!",
+    "TABS": {
+        "HOME": "My Diet",
+        "PROFILE": "Profile",
+        "MY_MEDICATION": "My Medication",
+        "CONTACT_DR": "Contact Dr.",
+        "MY_PATIENTS": "My Patients",
+        "DR_LIST": "Doctors List",
+        "CONTACT_PATIENT": "Contact Patient",
+        "MORE": "More"
+    },
+    "LOGIN": {
+        "LOGIN": "Login Patient",
+        "LOGIN_DR": "Login Doctor",
+        "LOGIN_OTIONS": "Login",
+        "PATIENT_OR_DR": "Are you a patient or doctor?",
+        "FILE_NO": "File Number or Email",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "SHOW_PASSWORD": "Show Password",
+        "FORGOT_PASSWORD": "Forgot Password?",
+        "GO_SIGNUP": "Create new account?",
+        "GO_DR_LOGIN": "I'm a doctor..",
+        "GO_LOGIN": "I'm a patient..",
+        "SUCCESS": "You are logged in successfully",
+        "SUCCESS_LOGOUT": "You are logged out successfully"
+    },
+    "SIGNUP": {
+        "SIGNUP": "Signup Patient",
+        "EMAIL": "Email",
+        "FILE_NO": "File Number",
+        "PASSWORD": "Password",
+        "SHOW_PASSWORD": "Show Password",
+        "NAME": "Full Name",
+        "USERNAME": "Username",
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name",
+        "ADDRESS": "Address",
+        "SUCCESS": "You created new account successfully",
+        "GO_LOGIN": "Already, have an account..login?"
+    },
+    "PROFILE": {
+        "EMAIL": "Email",
+        "FILE_NO": "File Number",
+        "PASSWORD": "Password",
+        "NAME": "Full Name",
+        "ADDRESS": "Address",
+        "LOCATION": "Location On Map",
+        "LOGOUT": "Logout",
+        "DR_NAME": "Doctor Name",
+        "SECURITY": "Security",
+        "PRESONAL_INFO": "Personal Information"
+    },
+    "DIET": {
+        "MY_FOOD":"My Food",
+        "NUTRITION":"Nutrition",
+        "TOTAL":"Total",
+        "ADDED_AT":"Added at",
+        "DAY_VIEW_FOOD":"Day View Of Food",
+        "DAY_VIEW_NUTRITIONS":"Day View Of Nutritions",
+        "NUTRITIONS":{
+            "IRON":"Iron",
+            "PROTEIN":"Protein",
+            "SODIUM":"Sodium",
+            "PHOSPHORUS":"Phosphorus",
+            "POTASSIUM":"Potassium",
+            "VITB12":"Vitamin B-12",
+            "FOLAC":"Folic acid"
+        }
+    },
+    "ADD_FOOD": {
+        "ADD_FOOD": "Add Food",
+        "SHOW_FOOD": "Food Nutritions",
+        "FOOD_ADDED": "A new food of yours has been added for today"
+    },
+    "PATIENT_CHAT": {
+        "PATIENT_CHAT": "Patient Chat"
+    },
+    "ADD_MEDICATION": {
+        "ADD_MEDICATION": "Add Medication",
+        "NAME": "Name",
+        "QUANTITY": "Quantity",
+        "FROM_DATE": "From Date",
+        "TO_DATE": "To Date",
+        "EVERY": "Every(hours)",
+        "NOTES": "Notes",
+        "ADD": "Add"
+    },
+    "ADD_DR": {
+        "ADD_DR": "Add Doctor"
+    },
+    "MY_PATIENTS":{
+        "PATIENT_INFO": "Patient Information"
+    },
+    "ADD_PATIENT": {
+        "ADD_PATIENT": "Add Patient",
+        "PATIENT_NO": "Patient File Number",
+        "NAME_DISPLAYED": "Name Displayed",
+        "ADD": "Add"
+    },
+    "HELP": {
+        "HELP": "Help",
+        "ABOUT_US":"About Us",
+        "DELETE_ACCOUNT" : "Delete Account"
+    },
+    "SETTINGS": {
+        "SETTINGS": "Settings",
+        "LANGUAGE": "Language",
+        "LOGOUT":"Logout"
+    },
+    "MORE": {
+        "SETTINGS": "Settings",
+        "HELP": "Help"
+    },
+    "VALIDATION": {
+        "BLANK": "Can not be blank!",
+        "INVALID_EMAIL": "Not valid email!",
+        "INVALID_PHONE": "Not Valid phone number!",
+        "PASSWORD_CONFIRMATION": "Password confirmation is wrong!",
+        "PASSWORD_TOO_SHORT": "Too short!",
+        "PASSWORD_TOO_LONG": "Too long!",
+        "INVALID_USER_Name":"Invalid username"
+    },
+    "ERRORS": {
+        "OFFLINE": "No Internet Connection!",
+        "REQUEST": "Something goes wrong!, try again later.",
+        "PERMISSION_DENIED": "Petseee doesn't have the permission to do that!. Please edit Permission for petseee from Mobile Settings first",
+        "FIREBASE": {
+            "EMAIL_NOT_FOUND": "Invalid Email Address!",
+            "INVALID_PASSWORD": "Incorrect Psssword!",
+            "EMAIL_EXISTS": "The email address is already in use by another account.",
+            "INVALID_EMAIL_OR_PASSWORD": "Something is incorrect!"
+        }
+    }
+}

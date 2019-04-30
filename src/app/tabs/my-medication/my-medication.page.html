@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{'TABS.MY_MEDICATION' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+      <ion-item-divider>
+        <ion-label color="primary">Medication List</ion-label>
+      </ion-item-divider>
+    <ion-card *ngFor="let medication of myMedication | async" >
+      <ion-card-header>
+        <ion-card-title color="primary"> {{ medication?.name }} </ion-card-title>
+        <ion-card-subtitle color="medium">{{'ADD_MEDICATION.FROM_DATE' | translate }}: {{ medication?.fromDate }}</ion-card-subtitle>
+        <ion-card-subtitle color="medium">{{'ADD_MEDICATION.TO_DATE' | translate }}: {{ medication?.toDate }}</ion-card-subtitle>
+        <ion-card-subtitle color="medium">{{'ADD_MEDICATION.QUANTITY' | translate }}: {{ medication?.quantity }}</ion-card-subtitle>
+        <ion-card-subtitle color="medium">{{'ADD_MEDICATION.EVERY' | translate }}: {{ medication?.every }} Hours</ion-card-subtitle>
+        <ion-card-subtitle color="medium">{{'ADD_MEDICATION.NOTES' | translate }}: {{ medication?.notes }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-button size="small" (click)="setReminder(medication)" >Reminder for the next dose </ion-button>
+    </ion-card>
+</ion-content>

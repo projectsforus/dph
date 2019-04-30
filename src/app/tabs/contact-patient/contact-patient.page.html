@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{'TABS.CONTACT_PATIENT' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-padding>
+    <ion-item *ngFor="let patient of myPatients | async"[routerLink]="['/tabs/contact-patient/patient-chat', patient.uid]">
+      <ion-avatar slot="start">
+        <ion-img [src]="patient?.photo_url ||'assets/imgs/patient.png'"></ion-img>
+        <!-- <span class="onlineOffline_icon"
+            [ngStyle]="{'background-color':(chat.status === 'online'? '#4cd137' : '#c23616')}"></span> -->
+      </ion-avatar>
+      <div class="usernameSection" no-padding>
+        <h5>
+          <ion-icon name="person" color="medium"></ion-icon>
+          {{patient?.name}}
+        </h5>
+        <p class="descText" no-margin no-padding><ion-icon name="document"></ion-icon>{{patient?.fileNo}}</p>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

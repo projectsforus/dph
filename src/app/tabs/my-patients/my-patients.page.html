@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end" [routerLink]="['/tabs/my-patients/add-patient/']">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="person-add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{'TABS.MY_PATIENTS' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+      <ion-item-divider>
+        <ion-label color="primary">My Patients List</ion-label>
+      </ion-item-divider>
+      <ion-card *ngFor="let patient of myPatients | async" >
+        <ion-card-header>
+          <ion-card-title color="primary">
+            <ion-icon name="person"></ion-icon>
+            {{patient?.name}}
+          </ion-card-title>
+          <ion-card-subtitle color="medium">
+            <ion-icon name="document"></ion-icon>
+            {{patient?.fileNo}}
+          </ion-card-subtitle>
+        </ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="6">
+                <ion-button size="small" (click)="patientInfo(patient)">{{'MY_PATIENTS.PATIENT_INFO' | translate }}</ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button size="small" [routerLink]="['/tabs/my-patients',patient.uid,'add-medication']">Add Medication </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-card>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{'ADD_PATIENT.ADD_PATIENT' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+        <ion-searchbar color="medium" showCancelButton clearIcon 
+          animated spellcheck autocomplete
+          autocorrect debounce="500"
+          placeholder="Search for a patient" 
+          (ionChange)="search($event)" (ionCancel)="clear()">
+        </ion-searchbar>
+      <ion-spinner *ngIf="searching"></ion-spinner>
+      <ion-list *ngIf="!filter">
+        <ion-card *ngFor="let patient of patients | async">
+          <ion-card-header>
+            <ion-card-title color="primary">
+              <ion-icon name="person"></ion-icon>
+              {{patient?.name}}
+            </ion-card-title>
+            <ion-card-subtitle color="medium">
+              <ion-icon name="document"></ion-icon>
+              {{patient?.fileNo}}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                  <ion-button (click)="save(patient)">{{'ADD_PATIENT.ADD' | translate }}</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-list>
+      <ion-list *ngIf="filter" >
+        <ion-card *ngFor="let patient of filteredPatients">
+          <ion-card-header>
+            <ion-card-title color="primary">
+              <ion-icon name="person"></ion-icon>
+              {{patient?.name}}
+            </ion-card-title>
+            <ion-card-subtitle color="medium">
+              <ion-icon name="document"></ion-icon>
+              {{patient?.fileNo}}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                  <ion-button (click)="save(patient)">{{'ADD_PATIENT.ADD' | translate }}</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-list>
+
+</ion-content>

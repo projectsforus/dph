@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{'TABS.PROFILE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label color="primary">{{'PROFILE.PRESONAL_INFO' | translate }}</ion-label>
+    </ion-item-divider>
+
+    <ion-item text-wrap>
+      <ion-label position="stacked" color="medium">{{'PROFILE.NAME' | translate }}</ion-label>
+      {{ (profile | async)?.profile?.firstName }} {{ (profile | async)?.profile?.lastName }}
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" color="medium">{{'PROFILE.EMAIL' | translate }}</ion-label>
+        {{ auth?.email }}
+    </ion-item>
+    <p *ngIf="!auth?.emailVerified" class="hint">Not Verified</p>
+    <ion-item *ngIf="!userService.getDoctor()">
+      <ion-label position="stacked" color="medium">{{'PROFILE.FILE_NO' | translate }}</ion-label>
+        {{ (profile | async)?.profile?.fileNo }}
+    </ion-item>
+    <ion-item *ngIf="!userService.getDoctor()" >
+      <ion-label position="stacked" color="medium">{{'PROFILE.DR_NAME' | translate }}</ion-label>
+        {{ (profile | async)?.myDoctor?.name }}
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label color="primary">{{'PROFILE.SECURITY' | translate }}</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label position="stacked" color="medium">{{'PROFILE.PASSWORD' | translate }}</ion-label>
+    </ion-item>
+    <ion-item (click)="logout()" >
+      <ion-label position="stacked" color="medium">{{'PROFILE.LOGOUT' | translate }} </ion-label>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

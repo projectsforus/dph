@@ -1,0 +1,128 @@
+<ion-header >
+  <ion-toolbar color="primary">
+      <ion-buttons slot="end" [routerLink]="['/tabs/home/add-food/']">
+        <ion-button color="light">
+          <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    <ion-title>{{'TABS.HOME' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-segment [(ngModel)]="segment" value="food" color="secondary" (ionChange)="segmentChanged()">
+    <ion-segment-button value="food">
+      <ion-label>{{'DIET.MY_FOOD' | translate }}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="nutrition">
+      <ion-label>{{'DIET.NUTRITION' | translate }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-item>
+    <ion-label>{{'DIET.DAY_VIEW_FOOD' | translate }}</ion-label>
+    <ion-datetime
+      display-format="DD MMM YYYY"
+      picker-format="DDD MMM DD YYYY"
+      [(ngModel)]="day" (ionChange)="changeDay()">
+    </ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-note slot="end" color="primary" *ngIf="segment == 'food'">{{'DIET.ADDED_AT' | translate }}</ion-note>
+    <ion-note slot="end" color="primary"  *ngIf="segment == 'nutrition'">{{'DIET.TOTAL' | translate }}</ion-note>
+  </ion-item>
+  <ion-list *ngIf="segment == 'nutrition'" >
+    <hr>
+    <hr>
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.IRON' | translate }}
+      </ion-label>
+    
+      <ion-note slot="end" color="secondary"> {{(nutritions | async)?.iron || 0 }} / {{normals?.iron}} mg</ion-note>
+    </ion-item>
+    <ion-progress-bar [color]="progressColorMin((nutritions | async)?.iron/normals.iron)"
+      [value]="(nutritions | async)?.iron/normals.iron">
+    </ion-progress-bar>
+  
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.VITB12' | translate }}
+      </ion-label>
+    
+      <ion-note slot="end" color="secondary"> {{(nutritions | async)?.vitaminb12 || 0 }} / {{normals?.vitaminb12}} µg</ion-note>
+    </ion-item>
+    <ion-progress-bar [color]="progressColorMin((nutritions | async)?.vitaminb12/normals.vitaminb12)"
+      [value]="(nutritions | async)?.vitaminb12/normals.vitaminb12">
+    </ion-progress-bar>
+  
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.FOLAC' | translate }}
+      </ion-label>
+    
+      <ion-note slot="end" color="secondary"> {{(nutritions | async)?.folicacid || 0 }} / {{normals?.folicacid}} µg</ion-note>
+    </ion-item>
+    <ion-progress-bar [color]="progressColorMin((nutritions | async)?.folicacid/normals?.folicacid)"
+      [value]="(nutritions | async)?.folicacid/normals?.folicacid">
+    </ion-progress-bar>
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.PROTEIN' | translate }}
+      </ion-label>
+      <ion-note slot="end" color="secondary">{{(nutritions | async)?.protein || 0 }} / {{normals?.protein}} g</ion-note>
+    </ion-item>
+    <ion-progress-bar [value]="(nutritions | async)?.protein/normals?.protein"
+      [color]="progressColor(progressColor((nutritions | async)?.protein/normals?.protein))" ></ion-progress-bar>
+
+    <ion-item>
+      <ion-label>
+         {{'DIET.NUTRITIONS.PHOSPHORUS' | translate }}
+      </ion-label>
+      <ion-note slot="end" color="secondary">{{(nutritions | async)?.phosphorus || 0 }} / {{normals?.phosphorus}} mg</ion-note>
+    </ion-item>
+    <ion-progress-bar [value]="(nutritions | async)?.phosphorus/normals?.phosphorus"
+     [color]="progressColor((nutritions | async)?.phosphorus/normals?.phosphorus)"></ion-progress-bar>
+
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.SODIUM' | translate }}
+      </ion-label>
+      <ion-note slot="end" color="secondary">{{(nutritions | async)?.sodium || 0 }} / {{normals?.sodium}} mg</ion-note>
+    </ion-item>
+    <ion-progress-bar  [value]="(nutritions | async)?.sodium/normals?.sodium"
+      [color]="progressColor((nutritions | async)?.sodium/normals?.sodium)"></ion-progress-bar>
+    
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.POTASSIUM' | translate }}
+      </ion-label>
+      <ion-note slot="end" color="secondary">{{(nutritions | async)?.potassium || 0 }} / {{normals?.potassium}} mg</ion-note>
+    </ion-item>
+    <ion-progress-bar [value]="(nutritions | async)?.potassium/normals?.potassium"
+     [color]="progressColor((nutritions | async)?.potassium/normals?.potassium)"></ion-progress-bar>
+
+  </ion-list>
+
+  <ion-list *ngIf="segment == 'food'">
+      <ion-spinner *ngIf="loading"></ion-spinner>
+    <ion-item *ngFor="let food of foods | async" >
+      <ion-label position="stacked">
+        {{food?.food?.food_name}}
+      </ion-label>
+      <ion-text color="medium">
+        {{food?.food?.serving_qty}} {{food?.food?.serving_unit}}
+      </ion-text>
+      <ion-note slot="end" color="dark">{{food?.added_at}}</ion-note>
+    </ion-item>
+    <ion-list *ngIf="!loading && !(foods | async)?.length">
+      <ion-text color="secondary">
+        Nothing to show you yet for this day!
+      </ion-text>
+      <hr>
+      <ion-item class="empty">
+        <ion-img src="assets/imgs/empty.png"></ion-img>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>

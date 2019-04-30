@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end" (click)="dismiss()">
+      <ion-icon name="close-circle-outline" color="light" ion-button></ion-icon>
+    </ion-buttons>
+    <ion-title>{{'ADD_FOOD.SHOW_FOOD' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content padding>
+    <ion-item-divider>
+      <ion-label color="primary">{{food.food_name}}</ion-label>
+      (
+        <ion-text color="medium">
+          {{food?.serving_qty}} {{food?.serving_unit}}
+        </ion-text>
+      )
+    </ion-item-divider>
+    <ion-list >
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.IRON' | translate }}
+      </ion-label>
+
+      <ion-note slot="end" color="secondary">({{currentNutritions?.iron}} + {{ nutritions?.iron?.value || 0 }}) / {{normals?.iron}} mg</ion-note>
+    </ion-item>
+    <ion-progress-bar
+      [color]="progressColorMin(totalNutritions?.iron/normals.iron)"
+      [value]="currentNutritions?.iron/normals?.iron"
+      [buffer]="totalNutritions?.iron/normals?.iron">
+    </ion-progress-bar>
+  
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.VITB12' | translate }}
+      </ion-label>
+      <ion-note slot="end" color="secondary">({{currentNutritions?.vitaminb12}} + {{ nutritions?.vitaminb12?.value || 0 }}) / {{normals?.vitaminb12}} µg</ion-note>
+    </ion-item>
+    <ion-progress-bar
+      [color]="progressColorMin(totalNutritions?.vitaminb12/normals.vitaminb12)"
+      [value]="currentNutritions?.vitaminb12/normals?.vitaminb12"
+      [buffer]="totalNutritions?.vitaminb12/normals?.vitaminb12">
+    </ion-progress-bar>
+  
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.FOLAC' | translate }}
+      </ion-label>
+      <ion-note slot="end" color="secondary">({{currentNutritions?.folicacid}} + {{ nutritions?.folicacid?.value || 0 }}) / {{normals?.folicacid}} µg</ion-note>
+    </ion-item>
+    <ion-progress-bar
+      [color]="progressColorMin(totalNutritions?.folicacid/normals?.folicacid)"
+      [value]="currentNutritions?.folicacid/normals.folicacid"
+      [buffer]="totalNutritions?.folicacid/normals?.folicacid">
+    </ion-progress-bar>
+
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.PROTEIN' | translate }}
+      </ion-label>
+      <ion-note slot="end" color="secondary">({{currentNutritions?.protein}} + {{ nutritions?.protein?.value }}) / {{normals.protein}} g</ion-note>
+    </ion-item>
+    <ion-progress-bar [color]="progressColor(totalNutritions?.protein/normals?.protein)"
+      [value]="currentNutritions?.protein/normals?.protein"
+      [buffer]="totalNutritions?.protein/normals?.protein">
+    </ion-progress-bar>
+  
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.PHOSPHORUS' | translate }}
+      </ion-label>
+      <ion-note slot="end" color="secondary"> ({{currentNutritions?.phosphorus}} + {{ nutritions?.phosphorus?.value }}) / {{normals.phosphorus}} mg</ion-note>
+    </ion-item>
+    <ion-progress-bar [color]="progressColor(totalNutritions?.phosphorus/normals?.phosphorus)"
+      [value]="currentNutritions?.phosphorus/normals?.phosphorus"
+      [buffer]="totalNutritions?.phosphorus/normals?.phosphorus">
+    </ion-progress-bar>
+  
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.SODIUM' | translate }}
+      </ion-label>
+      <ion-note slot="end" color="secondary">({{currentNutritions?.sodium}} + {{ nutritions?.sodium?.value }}) / {{normals.sodium}} mg</ion-note>
+    </ion-item>
+    <ion-progress-bar [color]="progressColor(totalNutritions?.sodium/normals?.sodium)"
+      [value]="currentNutritions?.sodium/normals?.sodium"
+      [buffer]="totalNutritions?.sodium/normals?.sodium">
+    </ion-progress-bar>
+  
+    <ion-item>
+      <ion-label>
+        {{'DIET.NUTRITIONS.POTASSIUM' | translate }}
+      </ion-label>
+      <ion-note slot="end" color="secondary">({{currentNutritions?.potassium}} + {{ nutritions?.potassium?.value }}) / {{normals.potassium}} mg</ion-note>
+    </ion-item>
+    <ion-progress-bar [color]="progressColor(totalNutritions?.potassium/normals?.potassium)"
+      [value]="currentNutritions?.potassium/normals?.potassium"
+      [buffer]="totalNutritions?.potassium/normals?.potassium">
+    </ion-progress-bar>
+  
+  </ion-list>
+  <ion-button expand="block" (click)="checkTotals()">
+    {{'ADD_FOOD.ADD_FOOD' | translate }}</ion-button>
+  </ion-content>

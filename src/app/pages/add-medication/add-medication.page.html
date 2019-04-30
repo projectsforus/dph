@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{'ADD_MEDICATION.ADD_MEDICATION' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="medicationForm">
+      <ion-list>
+          <ion-item>
+            <ion-label position="stacked">{{'ADD_MEDICATION.NAME' | translate }}</ion-label>
+            <ion-input formControlName="name"></ion-input>
+          </ion-item>
+          <app-control-error-message [control]="medicationForm['controls']['name']"></app-control-error-message>
+
+          <ion-item>
+            <ion-label position="stacked">{{'ADD_MEDICATION.FROM_DATE' | translate }}</ion-label>
+            <ion-datetime formControlName="fromDate" display-format="DD/MM/YYYY" picker-format="DD MMMM YYYY"></ion-datetime>
+          </ion-item>
+          <app-control-error-message [control]="medicationForm['controls']['fromDate']"></app-control-error-message>
+
+          <ion-item>
+            <ion-label position="stacked">{{'ADD_MEDICATION.TO_DATE' | translate }}</ion-label>
+            <ion-datetime formControlName="toDate" display-format="DD/MM/YYYY" picker-format="DD MMMM YYYY"></ion-datetime>
+          </ion-item>
+          <app-control-error-message [control]="medicationForm['controls']['toDate']"></app-control-error-message>
+
+          <ion-item>
+            <ion-label position="stacked">{{'ADD_MEDICATION.EVERY' | translate }}</ion-label>
+            <ion-input formControlName="every" type='number'></ion-input>
+          </ion-item>
+          <app-control-error-message [control]="medicationForm['controls']['every']"></app-control-error-message>
+          
+          <ion-item>
+            <ion-label position="stacked">{{'ADD_MEDICATION.QUANTITY' | translate }}</ion-label>
+            <ion-input formControlName="quantity"></ion-input>
+          </ion-item>
+          <app-control-error-message [control]="medicationForm['controls']['quantity']"></app-control-error-message>
+
+          <ion-item>
+            <ion-label position="stacked">{{'ADD_MEDICATION.NOTES' | translate }}</ion-label>
+            <ion-input formControlName="notes"></ion-input>
+          </ion-item>
+          <app-control-error-message [control]="medicationForm['controls']['notes']"></app-control-error-message>
+      </ion-list>
+  </form>
+  <ion-button expand="block" type="submit" [disabled]="!medicationForm.valid" (click)="save()">
+    {{'ADD_MEDICATION.ADD' | translate }}</ion-button>
+</ion-content>

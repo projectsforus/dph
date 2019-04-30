@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{'LOGIN.LOGIN_OTIONS' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-img src="assets/imgs/logo.png"></ion-img>
+
+  {{'LOGIN.PATIENT_OR_DR' | translate }}
+
+  <ion-list no-lines padding>
+    <ion-item>
+      <ion-button [routerLink]="['/login']" size="block">
+        {{'LOGIN.GO_LOGIN' | translate }}
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button [routerLink]="['/login-dr']" size="block">
+        {{'LOGIN.GO_DR_LOGIN' | translate }}
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

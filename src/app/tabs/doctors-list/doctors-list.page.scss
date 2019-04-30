@@ -1,0 +1,13 @@
+ion-card-title{
+    font-size: 15px;
+    font-weight: 600;
+}
+ion-card {
+    border: 1px solid var(--ion-color-primary);
+    border-radius: 1rem
+}
+
+ion-button:not([color]){
+    font-size: 0.5rem;
+    font-weight: 900;
+}
